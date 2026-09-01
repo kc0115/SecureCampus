@@ -1,4 +1,4 @@
-\# SecureCampus
+# SecureCampus
 
 
 
@@ -6,7 +6,7 @@ Proyecto académico de la asignatura Desarrollo Seguro.
 
 
 
-\## Propósito
+## Propósito
 
 
 
