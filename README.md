@@ -19,4 +19,7 @@ Diseñar, construir, asegurar, probar y documentar una aplicación aplicando pr�
 - Integrante 3. Maxi
 - Integrante 4. Luich
 
+## Seguridad
+
+SecureCampus será desarrollado siguiendo prácticas de Secure SDLC.
 
