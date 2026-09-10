@@ -61,8 +61,5 @@ las credenciales de autenticación, porque son la puerta de entrada a todos los 
 
 ### ¿Qué protegerías primero en SecureCampus y qué podría impedir que ese activo permanezca seguro?
 
-* **¿Qué proteger primero?**  
-  El primer mecanismo a salvaguardar es la capa de **Validación de Identidad y Autorización desde el lado del Servidor (Backend)**.
-
-* **¿Qué podría impedir que permanezca seguro?**  
-  La suposición errónea de que la seguridad consiste únicamente en validar en la interfaz gráfica (frontend), olvidando la regla fundamental de que **el servidor siempre debe verificar de manera independiente cada petición**.
+protegeríamos primero la autenticación y el control de autorización asociado a ella, ya que es el punto que, si falla, habilita el resto de los riesgos identificados
+ Lo que podría impedir que permanezca seguro es agregar nuevas funcionalidades o endpoints sin aplicar de forma consistente la verificación de autorización en el servidor, confiando erróneamente en que ocultar opciones en la interfaz es suficiente protección
