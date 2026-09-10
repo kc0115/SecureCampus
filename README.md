@@ -1,25 +1,38 @@
 # SecureCampus
 
+## 1. La problemática
+Un sistema académico concentra información y operaciones que no todos deben usar de la misma manera.
 
+• Perfiles, calificaciones, documentos y solicitudes tienen valor.
+• Estudiantes, profesores y administradores necesitan capacidades diferentes.
+• Una función correcta puede ser insegura si no protege identidad, datos y permisos.
 
-Proyecto académico de la asignatura Desarrollo Seguro.
+## 2. Su misión
+• Analizar necesidades y riesgos.
+• Diseñar y desarrollar funcionalidades.
+• Versionar decisiones y evidencias en GitHub.
+• Incorporar seguridad durante todo el ciclo de vida.
 
+## 3. Los actores de SecureCampus
+• Estudiante: 
+Perfil propio
+Calificaciones propias
+Documentos propios
+Solicitudes e historial
 
+• Profesor: 
+Perfil
+Grupos asignados
+Captura de calificaciones
+Listas autorizadas
 
-## Propósito
+• Administrador: 
+Usuarios
+Roles y permisos
+Logs
+Operaciones condicionadas
 
-
-
-Diseñar, construir, asegurar, probar y documentar una aplicación aplicando prácticas de Desarrollo Seguro.
-
-## Equipo
-
-- Integrante 1. Tania
-- Integrante 2. Emma
-- Integrante 3. Maxi
-- Integrante 4. Luich
-
-## Seguridad
-
-SecureCampus será desarrollado siguiendo prácticas de Secure SDLC.
-
+• Jefe de docencia: 
+Creación alta materias
+creación de grupos 
+asignación de grupos a profesores
