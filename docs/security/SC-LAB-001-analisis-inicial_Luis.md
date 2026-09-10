@@ -1,5 +1,12 @@
 # SC-LAB-001 - Análisis Inicial de Seguridad
 
+### Integrantes 
+- Cortés Guzmán Tania Isabel 
+- Reyes Gonzalez Emmanuel 
+- Romero Corral Luis Carlos 
+
+10/Septiembre/2026
+
 ## 4. Actividad guiada: consulta de perfiles
 
 | Elemento | Respuesta del equipo | Justificación |
@@ -28,41 +35,25 @@
 ## 6. Preguntas de reflexión
 
 ### 1. ¿Una amenaza y una vulnerabilidad son lo mismo? Explica con un ejemplo de SecureCampus.
-> **No.** 
-> - Una **amenaza** es el agente o circunstancia externa que puede materializar un daño, como un estudiante curioso intentando alterar recursos. 
-> - La **vulnerabilidad** es la debilidad técnica intrínseca en el sistema, como el endpoint `/calificaciones/125` que carece de comprobaciones de autorización. 
-> 
-> *Conclusión:* La amenaza aprovecha la vulnerabilidad para concretar el ataque.
-
----
+No es lo mismo, una amezana es el actor o situación externa que *podría* causar un daño, por ejemplo que un estudiante malicioso quiera intentar ver calificaciones o informacion ajena, y en cambio la vulnerabilidad es alguna *debilidad* que tenga el mismo sistema como el endpoint /calificaciones/125 que carece de comprobaciones de autorización. (como en el primer  ejemplo de Maria)
+basicamente la amenaza aprovecha la vulnerabilidad para concretar el ataque.
 
 ### 2. ¿Puede existir una vulnerabilidad aunque todavía nadie la haya explotado?
-> **Totalmente.** Un error en la validación de autorización existe desde el momento en que el código es escrito y desplegado, independientemente de si un atacante ya ha localizado o abusado de esa falla. La vulnerabilidad es una condición latente del sistema.
+si, ya que la vulnerabilidad es una propiedad del sistema, no depende de que alguien la use o no, como por ejemplo el caso de perfil/125 y perfil/126 es un buen ejemplo, ya que la falta de validación de autorización existe desde que se escribió el codigo, independientemente si maria fue la primera en notarlo o no  
 
----
 
 ### 3. ¿Un usuario autenticado está automáticamente autorizado para cualquier recurso?
-> **Absolutamente no.** 
-> - La **autenticación** se encarga exclusivamente de verificar la identidad (responder a la pregunta: *¿quién eres?*).
-> - La **autorización** determina el nivel de acceso sobre un objeto (responder a la pregunta: *¿qué puedes hacer con este recurso?*).
-> 
-> Se debe evitar el supuesto de que "estar autenticado" otorga automáticamente permisos para cualquier operación.
 
----
+no porque la autenticación se encargar de verificar la identidad del usuario, responde a "quien eres?" y autorizacion responde a "que tienes permitido hacer o ver?", basicamente la autorizacion determina el nivel de acceso 
+
 
 ### 4. ¿Qué control de los propuestos debería definirse desde requisitos o diseño? ¿Por qué?
-> El modelo de **Control de Acceso Basado en Roles (RBAC)** y la política de **no almacenar credenciales en texto plano**. 
-> 
-> **Por qué:** Esto es vital porque la seguridad debe incorporarse al ciclo de vida del software desde el inicio (*Security by Design*), integrándose en las decisiones arquitectónicas tempranas en lugar de añadirse como un parche superficial al final del desarrollo.
+para la seguridad la verificaión de autorización a nivel de usuario en el backend (aplicada en los escenarios de los perfiles estudiante, maestro, jefe de docencia y administrador y los privilegios de cada uno), todo esto debe definirse desde los requisitos y diseño del sistema, no agregarlo despues (security by design) 
 
----
 
 ### 5. ¿Qué activo consideran más crítico y por qué?
-> La base de datos del **Módulo de Autenticación, Roles y Auditoría**. 
-> 
-> **Por qué:** Si un atacante compromete los mecanismos que validan identidades y roles, obtendrá control total para leer perfiles, alterar actas académicas y borrar el rastro de sus operaciones en los registros de auditoría.
+las credenciales de autenticación, porque son la puerta de entrada a todos los demás activos, ya que si un ataque compromete una cuenta entonces tiene acceso a un perfil y su información privada 
 
----
 
 ## 10. Cierre
 
