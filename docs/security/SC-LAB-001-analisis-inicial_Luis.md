@@ -2,14 +2,16 @@
 
 ## 4. Actividad guiada: consulta de perfiles
 
+**Caso:** María inicia sesión con el perfil 125. Al observar la URL, cambia manualmente `/perfil/125` por `/perfil/126`. El sistema devuelve información de otro estudiante.
+
 | Elemento | Respuesta del equipo | Justificación |
 | :--- | :--- | :--- |
-| **Activo** | Información personal y académica del perfil del estudiante. | Es el recurso con valor dentro del sistema que requiere protección rigurosa de su confidencialidad. |
-| **Amenaza** | Un usuario legítimo (estudiante) actuando con curiosidad o intención maliciosa. | María ya cuenta con credenciales válidas y acceso a la red, representando una amenaza interna. |
+| **Activo** | Información personal y académica del perfil del estudiante. | Es el recurso con valor dentro del sistema que requiere protección rigurosa de su confidencialidad, su exposicion no autorizada afecta directamente a la privacidad. |
+| **Amenaza** | Un usuario autenticado (estudiante) actuando con curiosidad o intención maliciosa. | María ya cuenta con credenciales válidas y acceso a la red, representando una amenaza interna. |
 | **Vulnerabilidad** | Falta de control de acceso a nivel de objeto (*Insecure Direct Object Reference* - **IDOR**) en el backend. | El sistema confía ciegamente en el parámetro enviado en la URL sin validar la autorización sobre el recurso solicitado. |
-| **Ataque** | Manipulación de parámetros (*Parameter Tampering*). | Modificación directa e intencional del identificador en la petición HTTP enviada al servidor. |
-| **Impacto** | Brecha de confidencialidad y violación a la privacidad. | Exposición no autorizada de Información de Identificación Personal (PII) e historial académico de otros alumnos. |
-| **Riesgo** | **Alto** | Alta probabilidad de ocurrencia debido a la nula complejidad técnica para explotarlo, sumado a un impacto directo y severo a la privacidad. |
+| **Ataque** | Manipulación de parámetros: el atacante cambia manualmente el identificador en la URL (`/perfil/126`, `/perfil/127`, …) para acceder a otros perfiles. | Modificación directa e intencional del identificador en la petición HTTP enviada al servidor. |
+| **Impacto** | Brecha de confidencialidad, posible violación de normativas de protección de datos y pérdida de confianza en la plataforma. | Exposición no autorizada de Información de Identificación Personal (PII) e historial académico de otros alumnos. |
+| **Riesgo** | **Alto**, la proobabilidad de explotacion es alta y el impacto se vuelve un tanto significativo. | Alta probabilidad de ocurrencia debido a la nula complejidad técnica para explotarlo, sumado a un impacto directo y severo a la privacidad. |
 | **Control** | Validación estricta de autorización en el servidor (ABAC / RBAC). | El backend debe verificar siempre que el ID del usuario en la sesión activa posea permisos explícitos sobre el recurso solicitado antes de procesar la respuesta. |
 
 ---
