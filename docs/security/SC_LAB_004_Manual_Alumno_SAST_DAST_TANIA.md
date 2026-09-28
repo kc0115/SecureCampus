@@ -1,4 +1,4 @@
-# Evidencia de Laboratorio: SC-LAB-004 Análisis SAST y DAST
+# Evidencia de Laboratorio: SC-LAB-004 Análisis SAST y DAST tania
 
 ## 1. Objetivo
 Analizar la miniaplicación de SecureCampus utilizando técnicas de análisis de seguridad estático (SAST) y dinámico (DAST), interpretar la evidencia, corregir las vulnerabilidades deliberadas (SQLi y XSS) y comprobar las correcciones mediante un reanálisis.
